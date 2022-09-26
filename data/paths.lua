@@ -127,9 +127,17 @@ local paths = {
 	-- To Bill's
 	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {s="interact",dir="Up"}, {45,4}, {45,3}},
 	-- Save Bill
-	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="potionBeforeGoldeen"}, {s="item",item="escape_rope"}},
-	-- To Misty
-	{3, {19,18}, {19,20}, {30,20}, {30,19}},
+	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="potionBeforeGoldeen"}, {s="item",item="rare_candy",chain=true}, {s="item",item="escape_rope"}},
+	-- To The Rocket!
+	{3, {19,18}, {19,20}, {8,18}, {8,13}, {27,13}, {27,11}},
+	-- Wrecked house
+	{62, {2,7}, {2,2}, {3,2}, {3,0}},
+	-- Cerulean Rocket
+	{3, {27,9}, {28,9}, {s="potionBeforeRocket"}, {30,9}, {27,9}, {27,10}},
+	-- Wrecked House backtrack
+	{62, {3,1}, {3,2}, {2,2}, {2,8}},
+	-- To Misty!
+	{3, {27,12}, {22,12}, {22,20}, {30,20}, {30,19}},
 	-- Misty
 	{65, {4,13}, {s="a",a="Misty's Gym"}, {c="potion",b=false}, {4,8}, {2,8}, {2,5}, {7,5}, {7,3}, {6,3}, {5,3}, {s="waitToFight"}, {s="potionBeforeMisty"}, {5,2}, {s="waitToFight",dir="Left"}, {s="split"}, {s="tweetMisty"}, {5,3}, {7,3}, {7,5}, {5,5}, {5,14}},
 
@@ -140,7 +148,7 @@ local paths = {
 	-- Wrecked house
 	{62, {2,7}, {2,2}, {3,2}, {3,0}},
 	-- Cerulean Rocket
-	{3, {27,9}, {28,9}, {s="potionBeforeRocket"}, {33,9}, {33,18}, {36,18}, {36,31}, {25,31}, {25,36}},
+	{3, {27,9}, {33,9}, {33,18}, {36,18}, {36,31}, {25,31}, {25,36}},
 	-- Out of Cerulean
 	{16, {15,0}, {15,28}, {17,28}, {17,27}},
 	-- Underground entrance
@@ -255,7 +263,7 @@ local paths = {
 -- 9: FLY
 
 	-- Fly to Lavender
-	{27, {7,6}, {s="swapRepels"}, {s="teach",move="fly",poke="spearow",alt="pidgey",chain=true}, {s="teach",move="horn_drill",replace="bubblebeam",chain=true}, {s="item",item="super_repel",chain=true}, {s="potion",hp=6,chain=true}, {s="teach",move="rock_slide",replace="poison_sting",chain=true}, {s="fly",dest="lavender",map=4}},
+	{27, {7,6}, {s="swapRepels"}, {s="teach",move="fly",poke="spearow",alt="pidgey",chain=true}, {s="teach",move="horn_drill",replace="bubblebeam",chain=true}, {s="item",item="super_repel",chain=true}, {s="potion",hp=6,chain=true}, {s="teach",move="rock_slide",replace="mega_punch",chain=true}, {s="fly",dest="lavender",map=4}},
 	-- To the tower
 	{4, {3,6}, {s="a",a="Pokemon Tower"}, {14,6}, {14,5}},
 	-- Pokemon Tower
