@@ -48,6 +48,7 @@ local pokeIDs = {
 }
 
 local moveList = {
+	mega_punch = 5,
 	cut = 15,
 	fly = 19,
 	sand_attack = 28,
