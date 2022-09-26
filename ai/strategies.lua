@@ -1097,7 +1097,7 @@ strategyFunctions = {
 
 	pewterMart = function()
 		return shop.transaction{
-			buy = {{name="potion", index=1, amount=7}, {name="escape_rope", index=2}}
+			buy = {{name="potion", index=1, amount=8},}
 		}
 	end,
 
@@ -1221,6 +1221,41 @@ strategyFunctions = {
 			end
 			if (birdPath) then
 				walk.custom(birdPath)
+			end
+		end
+	end,
+
+	levelUpNido = function()
+		if (battle.isActive()) then
+			if (not control.shouldFight()) then
+				battle.run()
+			else
+				battle.automate()
+			end
+		else
+			local nidoPath
+			local px, py = player.position()
+			if (pokemon.getExp() > 2035) then
+				if (px > 33) then
+					return true
+				end
+				local startY = 9
+				if (px > 28) then
+					startY = py
+				end
+				nidoPath = {{32,startY}, {32,11}, {34,11}}
+			elseif (px == 37) then
+				if (py == 10) then
+					py = 11
+				else
+					py = 10
+				end
+				walk.step(px, py)
+			else
+				nidoPath = {{32,10}, {32,11}, {34,11}, {34,10}, {37,10}}
+			end
+			if (nidoPath) then
+				walk.custom(nidoPath)
 			end
 		end
 	end,

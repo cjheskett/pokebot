@@ -71,7 +71,7 @@ local paths = {
 	-- Leaving Pewter City
 	{2, {23,18}, {40,18}},
 	-- Route 3
-	{14, {0,10}, {s="a",a="Route 3"}, {c="catchFlier"}, {c="pp",on=true}, {s="battleModeSet"}, {8,10}, {8,8}, {11,8}, {11,6}, {s="leer",{"caterpie",8},{"weedle",7}}, {11,4}, {12,4}, {s="potion",hp=19}, {13,4}, {s="interact",dir="Right"}, {s="shortsKid"}, {13,5}, {s="potionBeforeCocoons"}, {18,5}, {s="interact",dir="Right"}, {s="swapHornAttack"}, {18,6}, {22,6}, {22,5}, {s="potion",hp=4}, {24,5}, {s="interact",dir="Down"}, {s="fightMetapod"}, {27,5}, {27,9}, {s="catchFlierBackup"}, {37,8}, {37,5}, {49,5}, {49,10}, {57,10}, {57,8}, {59,8}, {59,-1}},
+	{14, {0,10}, {s="a",a="Route 3"}, {c="catchFlier"}, {c="pp",on=true}, {s="battleModeSet"}, {8,10}, {8,8}, {11,8}, {11,6}, {s="leer",{"caterpie",8},{"weedle",7}}, {11,4}, {12,4}, {s="potion",hp=19}, {13,4}, {s="interact",dir="Right"}, {s="shortsKid"}, {13,5}, {s="potionBeforeCocoons"}, {18,5}, {s="interact",dir="Right"}, {s="swapHornAttack"}, {18,6}, {22,6}, {22,5}, {s="potion",hp=4}, {23,5}, {s="interact",dir="Up"}, {24,5}, {s="interact",dir="Down"}, {s="fightMetapod"}, {27,5}, {27,9}, {s="catchFlierBackup"}, {c="route3Exp"}, {s="levelUpNido"}, {37,8}, {37,5}, {49,5}, {49,10}, {57,10}, {57,8}, {59,8}, {59,-1}},
 	-- To the Center
 	{15, {9,16}, {c="pp",on=false}, {12,16}, {12,6}, {11,6}, {11,5}},
 	-- PP up
@@ -82,13 +82,22 @@ local paths = {
 -- 4: ROUTE 3
 
 	-- Mt. Moon F1
-	{59, {14,35}, {s="startMtMoon"}, {c="catchParas"}, {14,29}, {5,29}, {5,31}, {s="interact",dir="Down"}, {5,26}, {14,26}, {14,22}, {21,22}, {21,15}, {24,15}, {24,27}, {25,27}, {25,31}, {s="interact",dir="Left"}, {25,32}, {33,32}, {33,31}, {34,31}, {s="interact",dir="Right"}, {34,7}, {30,7}, {s="evolveNidorino"}, {28,7}, {s="teachWaterGun"}, {c="moon1Exp"}, {16,7}, {16,17}, {7,17}, {7,6}, {6,6}, {s="fightHiker"}, {6,2}, {3,2}, {s="interact",dir="Left"}, {5,2}, {5,5}},
+	--{59, {14,35}, {s="startMtMoon"}, {c="catchParas"}, {14,29}, {5,29}, {5,31}, {s="interact",dir="Down"}, {5,26}, {14,26}, {14,22}, {21,22}, {21,15}, {24,15}, {24,27}, {25,27}, {25,31}, {s="interact",dir="Left"}, {25,32}, {33,32}, {33,31}, {34,31}, {s="interact",dir="Right"}, {34,7}, {30,7}, {s="evolveNidorino"}, {28,7}, {s="teachWaterGun"}, {c="moon1Exp"}, {16,7}, {16,17}, {7,17}, {7,6}, {6,6}, {s="fightHiker"}, {6,2}, {3,2}, {s="interact",dir="Left"}, {5,2}, {5,5}},
+	{59, {14,35}, {s="startMtMoon"}, {c="catchParas"}, {14,29}, {5,29}, {5,31}, {s="interact",dir="Down"}, {9,31}, {9,29}, {14,29}, {14,22}, {21,22}, {21,15}, {24,15}, {24,16}, {25,16}, {25,32}, {30,32}, {30,31}, {34,31}, {s="interact",dir="Right"}, {34,23}, {s="item",item="rare_candy",poke="nidoran"}, {s="evolveNidorino"}, {35,23}, {s="interact",dir="Right"}, {35,22}, {34,22}, {34,7}, {31,7}, {31,3}, {29,3}, {29,5}, {17,5}, {17,11}},
 	-- Mt. Moon B2
+	{60, {25,9}, {17,9}, {17,11}},
+	-- Mt. Moon B3
+	{61, {25,9}, {28,9}, {28,5}, {s="interact", dir="Right"}, {28,9}, {25,9}},
+	-- Mt. Moon B2 Part 2
+	{60, {17,11}, {17,9}, {25,9}},
+	-- Mt. Moon F1 Part 2
+	{59, {17,11}, {17,13}, {16,13}, {16,17}, {9,17}, {9,12}, {8,12}, {8,3}, {4,3}, {4,2}, {3,2}, {s="interact", dir="Left"}, {3,5}, {5,5}},
+	-- Mt. Moon B2 Part 3
 	--{60, {5,5}, {5,17}, {21,17}},
 	{60, {5,5}, {s="nidoranManip"},{5,5},{5,16}, {s="pressA",dir="Down"}, {5,17}, {21,17}},
-	-- Mt. Moon B3
+	-- Mt. Moon B3 Part 2
 	--{61, {21,17}, {23,17}, {23,14}, {27,14}, {27,16}, {33,16}, {33,14}, {36,14}, {36,24}, {32, 24}, {32,31}, {10,31}, {10,18}, {s="evolveNidoking"}, {c="encounters",limit=nil}, {10,17}, {12,17}, {c="moon2Exp"}, {13,17}, {13,15}, {s="potion",hp=7}, {13,7}, {c="moon3Exp"}, {s="helix"}, {13,4}, {3,4}, {3,7}, {5,7}},
-	{61, {21,17}, {21,14}, {26,14}, {26,16}, {32,16}, {32,14}, {36,14}, {36,22}, {32,22}, {32,31}, {s="pressA", dir="Left"}, {29,31}, {s="pressA", dir="Left"}, {16,31}, {s="pressA", dir="Left"}, {13,31}, {s="pressA", dir="Left"}, {11,31}, {11,30}, {s="pressA", dir="Up"}, {11,26}, {s="pressA", dir="Up"}, {11,22}, {10,22}, {10,17}, {s="evolveNidoking"}, {c="encounters",limit=nil}, {10,17}, {12,17}, {c="moon2Exp"}, {13,17}, {13,15}, {s="potion",hp=7}, {13,7}, {c="moon3Exp"}, {s="helix"}, {13,4}, {3,4}, {3,7}, {5,7}},
+	{61, {21,17}, {21,14}, {26,14}, {26,16}, {32,16}, {32,14}, {36,14}, {36,22}, {32,22}, {32,31}, {s="pressA", dir="Left"}, {29,31}, {s="pressA", dir="Left"}, {16,31}, {s="pressA", dir="Left"}, {13,31}, {s="pressA", dir="Left"}, {11,31}, {11,30}, {s="pressA", dir="Up"}, {11,26}, {s="pressA", dir="Up"}, {11,22}, {10,22}, {10,17}, {s="teachWaterGun"}, {s="evolveNidoking"}, {c="encounters",limit=nil}, {10,17}, {12,17}, {13,17}, {13,15}, {s="potion",hp=7}, {13,7}, {s="helix"}, {13,4}, {3,4}, {3,7}, {5,7}},
 	-- Mt. Moon escape
 	{60, {23,3}, {27,3}},
 

@@ -72,6 +72,11 @@ local controlFunctions = {
 		shouldFight = {{name="rattata"}, {name="pidgey"}, {name="nidoran"}, {name="nidoranf",lvl={2}}}
 	end,
 
+	route3Exp = function()
+		minExp = 2035
+		shouldFight = {{name="spearow"}, {name="pidgey"}, {name="jigglypuff",lvl={5}}}
+	end,
+
 	moon1Exp = function()
 		if (skipHiker) then
 			minExp = 2704
