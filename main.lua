@@ -185,7 +185,7 @@ while true do
 	end
 	if (not input.update()) then
 		if (not utils.ingame() or continued) then
-			if (currentMap == 0 or currentMap == 255 or currentMap == 1) then
+			if (currentMap == 0 or currentMap == 255 or currentMap == 1 or currentMap == 60) then
 				if (running) then
 					if (not hasAlreadyStartedPlaying) then
 						client.reboot_core()
