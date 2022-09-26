@@ -97,7 +97,7 @@ local paths = {
 	{60, {5,5}, {s="nidoranManip"},{5,5},{5,16}, {s="pressA",dir="Down"}, {5,17}, {21,17}},
 	-- Mt. Moon B3 Part 2
 	--{61, {21,17}, {23,17}, {23,14}, {27,14}, {27,16}, {33,16}, {33,14}, {36,14}, {36,24}, {32, 24}, {32,31}, {10,31}, {10,18}, {s="evolveNidoking"}, {c="encounters",limit=nil}, {10,17}, {12,17}, {c="moon2Exp"}, {13,17}, {13,15}, {s="potion",hp=7}, {13,7}, {c="moon3Exp"}, {s="helix"}, {13,4}, {3,4}, {3,7}, {5,7}},
-	{61, {21,17}, {21,14}, {26,14}, {26,16}, {32,16}, {32,14}, {36,14}, {36,22}, {32,22}, {32,31}, {s="pressA", dir="Left"}, {29,31}, {s="pressA", dir="Left"}, {16,31}, {s="pressA", dir="Left"}, {13,31}, {s="pressA", dir="Left"}, {11,31}, {11,30}, {s="pressA", dir="Up"}, {11,26}, {s="pressA", dir="Up"}, {11,22}, {10,22}, {10,17}, {s="teachWaterGun"}, {s="evolveNidoking"}, {c="encounters",limit=nil}, {10,17}, {12,17}, {13,17}, {13,15}, {s="potion",hp=7}, {13,7}, {s="helix"}, {13,4}, {3,4}, {3,7}, {5,7}},
+	{61, {21,17}, {21,14}, {26,14}, {26,16}, {32,16}, {32,14}, {36,14}, {36,22}, {32,22}, {32,31}, {s="pressA", dir="Left"}, {29,31}, {s="pressA", dir="Left"}, {16,31}, {s="pressA", dir="Left"}, {13,31}, {s="pressA", dir="Left"}, {11,31}, {11,30}, {s="pressA", dir="Up"}, {11,26}, {s="pressA", dir="Up"}, {11,22}, {10,22}, {10,17}, {s="teachWaterGun"}, {s="evolveNidoking"}, {s="teach",move="mega_punch",replace="leer"}, {c="encounters",limit=nil}, {10,17}, {12,17}, {13,17}, {13,15}, {s="potion",hp=7}, {13,7}, {s="helix"}, {13,4}, {3,4}, {3,7}, {5,7}},
 	-- Mt. Moon escape
 	{60, {23,3}, {27,3}},
 
@@ -151,7 +151,7 @@ local paths = {
 	{74, {4,4}, {3,8}},
 	-- Oddish
 	-- TODO Bubblebeam split
-	{17, {17,14}, {s="a",a="Vermilion City"}, {c="catchOddish"}, {17,15}, {s="potion",hp=9,yolo=5}, {17,19}, {s="catchOddish"}, {11,29}, {s="potion",hp=9,yolo=5}, {11,29}, {s="waitToFight",dir="Down"}, {10,29}, {10,30}, {s="potion",hp=9,yolo=5}, {10,31}, {9,31}, {9,32}, {s="potion",hp=20,yolo=18,chain=true}, {s="teach",move="bubblebeam",replace="water_gun"}, {9,36}},
+	{17, {17,14}, {s="a",a="Vermilion City"}, {c="catchOddish"}, {17,15}, {s="potion",hp=9,yolo=5}, {17,19}, {s="catchOddish"}, {11,29}, {s="potion",hp=9,yolo=5}, {11,29}, {s="waitToFight",dir="Down"}, {10,29}, {10,30}, {s="potion",hp=9,yolo=5}, {10,31}, {9,31}, {9,32}, {s="potion",hp=20,yolo=18,chain=true}, {s="teach",move="bubblebeam",replace="poison_sting"}, {9,36}},
 	-- Enter Vermilion
 	{5, {19,0}, {c="disableCatch"}, {19,6}, {21,6}, {21,14}, {23,14}, {23,13}},
 	-- Vermilion mart
