@@ -1,6 +1,6 @@
 local paths = {
 	-- Red's room
-	{38, {3,6},{s="startTimer"}, {5,6}, {5,1}, {7,1}},
+	{38, {s="startTimer"}, {3,6}, {5,6}, {5,1}, {7,1}},
 	-- Red's house
 	{39, {7,1}, {7,6}, {3,6}, {3,8}},
 	-- Into the Wild
