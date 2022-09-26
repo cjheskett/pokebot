@@ -1530,6 +1530,24 @@ strategyFunctions = {
 		end
 	end,
 
+	thrashFight = function()
+		local selection = pb_memory.value("menu", "selection")
+		if (battle.isActive()) then
+			canProgress = true
+			if (selection == 79) then
+				menu.select(0)
+			elseif (selection == 69 or selection == 89) then
+				menu.select(1)
+			else
+				battle.automate()
+			end
+		elseif (canProgress) then
+			return true
+		else
+			textbox.handle()
+		end
+	end,
+
 	potionBeforeGoldeen = function()
 		if (initialize()) then
 			if (setYolo("goldeen") or pokemon.index(0, "hp") > 7) then
