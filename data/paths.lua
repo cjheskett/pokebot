@@ -109,8 +109,12 @@ local paths = {
 	{3, {0,18}, {s="a",a="Cerulean"}, {14,18}, {s="dodgeCerulean"}, {19,18}, {19,17}},
 	-- Cerulean Center
 	{64, {3,7}, {3,3}, {s="confirm",dir="Up"}, {3,8}},
+	-- Get Instant Text
+	{3, {19,18}, {19,23}, {16,23}, {16,26}, {13,26}, {13,25}},
+	-- Get Instant Text From Bikeman
+	{66, {2,7}, {4,7}, {4,2}, {s="getInstantText"}, {4,7}, {2,7}, {2,8}},
 	-- To the house
-	{3, {19,18}, {16,18}, {s="dodgeCeruleanLeft"}, {8,16}, {8,12}, {9,12}, {9,11}},
+	{3, {13,26}, {8,26}, {8,12}, {9,12}, {9,11}},--{s="dodgeCeruleanLeft"}, {8,16}, {8,12}, {9,12}, {9,11}},
 	-- In the house
 	{230, {2,7}, {2,0}},
 	-- Outback
@@ -127,13 +131,20 @@ local paths = {
 	-- To Bill's
 	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {s="interact",dir="Up"}, {45,4}, {45,3}},
 	-- Save Bill
-	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="potionBeforeGoldeen"}, {s="item",item="rare_candy",chain=true}, {s="item",item="escape_rope"}},
+	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="item",item="rare_candy",chain=true}, {s="item",item="escape_rope"}},
+	-- Use Center
+	{3, {19,18}, {19,17}},
+	{64, {3,7}, {3,3}, {s="confirm",dir="Up"}, {3,8}},
+	-- Get Instant Text
+	{3, {19,18}, {19,23}, {16,23}, {16,26}, {13,26}, {13,25}},
+	-- Get Instant Text From Bikeman
+	{66, {2,7}, {4,7}, {4,2}, {s="getInstantText"}, {4,7}, {2,7}, {2,8}},
 	-- To The Rocket!
-	{3, {19,18}, {19,20}, {8,18}, {8,13}, {27,13}, {27,11}},
+	{3, {13,26}, {8,26}, {8,13}, {27,13}, {27,11}},
 	-- Wrecked house
 	{62, {2,7}, {2,2}, {3,2}, {3,0}},
 	-- Cerulean Rocket
-	{3, {27,9}, {28,9}, {s="potionBeforeRocket"}, {30,9}, {27,9}, {27,10}},
+	{3, {27,9}, {28,9}, {30,9}, {27,9}, {27,10}},
 	-- Wrecked House backtrack
 	{62, {3,1}, {3,2}, {2,2}, {2,8}},
 	-- To Misty!
