@@ -200,4 +200,27 @@ function inventory.use(item, poke, midfight)
 	return true
 end
 
+function inventory.toss(item)	
+	local main = pb_memory.value("menu", "main")
+	local column = menu.getCol()
+	if (main == 128 or main == 60) then
+		if (column == 5) then
+			menu.select(inventory.indexOf(item), "accelerate", true)
+		elseif (column == 11) then
+			menu.select(2, true)
+		elseif (column == 14) then
+			menu.select(1, true)
+		end
+	elseif (main == 228) then
+		if (column == 14 and pb_memory.value("battle", "menu") == 95) then
+			input.press("B")
+		end
+	elseif (main == 103) then
+		input.press("B")
+	else
+		return false
+	end
+	return true
+end
+
 return inventory

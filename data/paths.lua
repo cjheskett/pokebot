@@ -46,13 +46,13 @@ local paths = {
 -- 2: NIDORAN
 
 	-- Out of Viridian City
-	{1, {0,17}, {16,17}, {16,16}, {18,16}, {18,6}, {s="dodgeViridianOldMan"}, {17, 0}, {17, -1}},
+	{1, {0,17}, {16,17}, {16,16}, {18,16}, {18,6}, {s="dodgeViridianOldMan"}, {18,4}, {15,4}, {s="interact",dir="Left"}, {17,4}, {17,0}, {17,-1}},
 	-- To the Forest
 	{13, {7,71}, {7,57}, {4,57}, {4,52}, {10,52}, {10,44}, {3,44}, {3,43}},
 	-- Forest entrance
 	{50, {4,7}, {s="a",a="Viridian Forest"}, {4,1}, {5,1}, {5,0}},
 	-- Viridian Forest
-	{51, {17,47}, {17,43}, {26,43}, {26,34}, {25,34}, {25,32}, {27,32}, {27,20}, {25,20}, {25,12}, {s="interact",dir="Up"}, {25,9}, {17,9}, {17,16}, {13,16}, {13,3}, {7,3}, {7,22}, {1,22}, {1,19}, {s="interact",dir="Up"}, {1,18}, {s="fightWeedle"}, {c="encounters",limit=22,extra="paras"}, {1,16}, {c="potion",b=false}, {s="equipForBrock",anti=true}, {1,5}, {s="equipForBrock"}, {1,-1}},
+	{51, {17,47}, {17,43}, {26,43}, {26,34}, {25,34}, {25,32}, {27,32}, {27,20}, {25,20}, {25,12}, {s="interact",dir="Up"}, {25,9}, {17,9}, {17,16}, {13,16}, {13,3}, {7,3}, {7,22}, {1,22}, {1,19}, {s="interact",dir="Up"}, {1,18}, {s="fightWeedle"}, {c="encounters",limit=22,extra="paras"}, {1,16}, {s="equipForBrock",anti=true}, {1,5}, {s="equipForBrock"}, {1,-1}},
 	-- Forest exit
 	{47, {4,7}, {4,1}, {5,1}, {5,0}},
 	-- Road to Pewter City
@@ -60,7 +60,7 @@ local paths = {
 	-- Pewter City
 	{2, {18,35}, {18,22}, {19,22}, {19,13}, {10,13}, {10,18}, {16,18}, {16,17}},
 	-- Brock
-	{54, {4,13}, {s="a",a="Brock's Gym"}, {4,8}, {1,8}, {1,4}, {4,4}, {4,2}, {s="interact",dir="Up"}, {s="fightBrock"}, {s="split"}, {s="emuSpeed",percent=100}, {4,14}},
+	{54, {4,13}, {s="a",a="Brock's Gym"}, {4,8}, {1,8}, {1,4}, {4,4}, {4,2}, {s="interact",dir="Up"}, {s="fightBrock"}, {s="split"}, {s="battleModeSet"}, {s="emuSpeed",percent=100}, {4,14}},
 
 -- 3: BROCK
 
@@ -71,7 +71,7 @@ local paths = {
 	-- Leaving Pewter City
 	{2, {23,18}, {40,18}},
 	-- Route 3
-	{14, {0,10}, {s="a",a="Route 3"}, {c="catchFlier"}, {c="pp",on=true}, {s="battleModeSet"}, {8,10}, {8,8}, {11,8}, {11,6}, {s="leer",{"caterpie",8},{"weedle",7}}, {11,4}, {12,4}, {s="potion",hp=19}, {13,4}, {s="interact",dir="Right"}, {s="shortsKid"}, {13,5}, {s="potionBeforeCocoons"}, {18,5}, {s="interact",dir="Right"}, {s="swapHornAttack"}, {18,6}, {22,6}, {22,5}, {s="potion",hp=4}, {23,5}, {s="interact",dir="Up"}, {24,5}, {s="interact",dir="Down"}, {s="fightMetapod"}, {27,5}, {27,9}, {s="catchFlierBackup"}, {c="route3Exp"}, {s="levelUpNido"}, {37,8}, {37,5}, {49,5}, {49,10}, {57,10}, {57,8}, {59,8}, {59,-1}},
+	{14, {0,10}, {s="a",a="Route 3"}, {c="catchFlier"}, {c="pp",on=true}, {8,10}, {8,8}, {11,8}, {11,6}, {s="leer",{"caterpie",8},{"weedle",7}}, {11,4}, {12,4}, {s="potion",hp=28}, {13,4}, {s="interact",dir="Right"}, {s="shortsKid"}, {13,5}, {18,5}, {s="interact",dir="Right"}, {18,6}, {22,6}, {22,5}, {s="potion",hp=22}, {23,5}, {s="interact",dir="Up"}, {24,5}, {s="interact",dir="Down"}, {s="fightMetapod"}, {27,5}, {27,9}, {s="catchFlierBackup"}, {c="route3Exp"}, {s="levelUpNido"}, {37,8}, {37,5}, {49,5}, {49,10}, {57,10}, {57,8}, {59,8}, {59,-1}},
 	-- To the Center
 	{15, {9,16}, {c="pp",on=false}, {12,16}, {12,6}, {11,6}, {11,5}},
 	-- PP up
@@ -129,7 +129,7 @@ local paths = {
 -- 6: NUGGET BRIDGE
 
 	-- To Bill's
-	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {s="interact",dir="Up"}, {45,4}, {45,3}},
+	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {45,4}, {45,3}},
 	-- Save Bill
 	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="item",item="rare_candy",chain=true}, {s="item",item="escape_rope"}},
 	-- Use Center
@@ -150,7 +150,7 @@ local paths = {
 	-- To Misty!
 	{3, {27,12}, {22,12}, {22,20}, {30,20}, {30,19}},
 	-- Misty
-	{65, {4,13}, {s="a",a="Misty's Gym"}, {c="potion",b=false}, {4,8}, {2,8}, {2,5}, {7,5}, {7,3}, {6,3}, {5,3}, {s="waitToFight"}, {s="potionBeforeMisty"}, {5,2}, {s="waitToFight",dir="Left"}, {s="split"}, {s="tweetMisty"}, {5,3}, {7,3}, {7,5}, {5,5}, {5,14}},
+	{65, {4,13}, {s="a",a="Misty's Gym"}, {c="potion",b=false}, {4,8}, {2,8}, {2,5}, {7,5}, {7,3}, {6,3}, {5,3}, {s="waitToFight"}, {5,2}, {s="waitToFight",dir="Left"}, {s="split"}, {5,3}, {7,3}, {7,5}, {5,5}, {5,14}},
 
 -- 7: MISTY
 
@@ -482,7 +482,7 @@ local paths = {
 
 	{120, {4,3}, {s="a",a="Blue"}, {s="blue"}, {3,0}},
 
-	{118, {4,2}, {s="champion"}}
+	{118, {4,2}, {s="champion"}, {s="split"}}
 }
 
 return paths
