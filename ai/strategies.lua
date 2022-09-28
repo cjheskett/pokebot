@@ -553,6 +553,16 @@ strategyFunctions = {
 		end
 	end,
 
+	toss = function(data)
+		if (menu.pause()) then
+			inventory.toss(data.item)
+		end
+		if (closeMenuFor(data)) then
+			return true
+		end
+		return false
+	end,
+
 	potion = function(data)
 		local curr_hp = pokemon.index(0, "hp")
 		if (curr_hp == 0) then
