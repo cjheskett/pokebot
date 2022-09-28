@@ -129,7 +129,7 @@ local paths = {
 -- 6: NUGGET BRIDGE
 
 	-- To Bill's
-	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {45,4}, {45,3}},
+	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {s="interact",dir="Up"}, {45,4}, {45,3}},
 	-- Save Bill
 	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="item",item="rare_candy",chain=true}, {s="item",item="escape_rope"}},
 	-- Use Center
