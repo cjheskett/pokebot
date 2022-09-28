@@ -27,6 +27,7 @@ local squirtleAtt, squirtleDef, squirtleSpd, squirtleScl
 local deepRun, resetting
 local level4Nidoran = true
 local skipHiker, yolo, riskGiovanni, maxEtherSkip
+local hasInstantText = false
 strategies.hardResetFlag = false
 
 
@@ -292,6 +293,7 @@ local function closeMenuFor(data)
 end
 
 local function useItem(data)
+	hasInstantText = false
 	local main = pb_memory.value("menu", "main")
 	if (tries == 0) then
 		tries = inventory.count(data.item)
@@ -591,6 +593,7 @@ strategyFunctions = {
 			if (toPotion) then
 				if (menu.pause()) then
 					inventory.use(toPotion)
+					hasInstantText = false
 					tempDir = true
 				end
 				return false
@@ -1470,6 +1473,22 @@ strategyFunctions = {
 			return true
 		else
 			textbox.handle()
+		end
+	end,
+
+	getInstantText = function()
+		if (initialize()) then
+			input.press("Right",10)
+		end
+		if (not textbox.isActive()) then
+			if (not hasInstantText) then
+				input.press("A")
+			else
+				return true
+			end
+		else
+			input.mash("B")
+			hasInstantText = true
 		end
 	end,
 
@@ -2778,6 +2797,7 @@ function strategies.softReset()
 	canProgress = false
 	initialized = false
 	maxEtherSkip = false
+	hasInstantText = false
 	tempDir = nil
 	strategies.canDie = nil
 	strategies.moonEncounters = nil

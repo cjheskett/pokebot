@@ -42,11 +42,20 @@ local function sendButton(button, ab, amove)
 	setForFrame = button
 end
 
+function input.mash(button)
+	local inputTable = {[button] = true}
+	buttonsPressed = joypad.get()
+	if (buttonsPressed[button]) then
+		inputTable[button] = false
+	end
+	joypad.set(inputTable)
+end
+
 function input.press(button, frames, amove)
---[[ 	if (setForFrame) then
-		print("ERR: Reassigning "..setForFrame.." to "..button)
+	if (setForFrame) then
+		--print("ERR: Reassigning "..setForFrame.." to "..button)
 		return
-	end ]]
+	end 
 	if (frames == nil or frames > 0) then
 		if (button == currentButton) then
 			return
