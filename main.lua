@@ -3,13 +3,13 @@
 GAME_NAME		= "red" -- Only currently supported option
 RESET_FOR_TIME	= true	-- Set to false if you just want to see the bot finish a run
 
-local CUSTOM_SEED	= nil -- Set to a known seed to replay it, or leave nil for random ones
+local CUSTOM_SEED	= nil --1664439255 -- Set to a known seed to replay it, or leave nil for random ones
 local PAINT_ON		= true -- Displays contextual information while the bot runs
 
 -- Start code (hard hats on)
 
 local START_WAIT = 99
-local VERSION = "1.3"
+local VERSION = "1.5"
 
 local battle = require "action.battle"
 local textbox = require "action.textbox"
@@ -41,15 +41,6 @@ local continued = false
 local CFC = 0
 local frameCount = 0
 
-
-local function calcTime()
---[[ 	local time = frameCount - 160
-	local seconds = math.floor(time / 60) % 60
-	local minutes = math.floor(frameCount / 3600)
-	local hours = math.floor(minutes / 60)
-	gui.text(0, 42, hours..":"..minutes..":"..seconds)
-	gui.text(0, 60, frameCount) ]]
-end 
 
 local function startNewAdventure()
 	local startMenu, withBattleStyle
@@ -149,7 +140,6 @@ local function resetAll()
 		print("RUNNING WITH A FIXED SEED ("..strategies.seed.."), every run will play out identically!")
 	else
 		strategies.seed = os.time()
-		print("Running Seed: "..strategies.seed)
 	end
 	math.randomseed(strategies.seed)
 end
@@ -257,8 +247,8 @@ while true do
 	end
 	if (PAINT_ON) then
 		paint.draw(currentMap)
-		calcTime()
 	end
+	strategies.checkTime()
 	input.advance()
 	emu.frameadvance()
 end
