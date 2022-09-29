@@ -143,6 +143,11 @@ local function resetDeath(extra)
 end
 strategies.death = resetDeath
 
+function strategies.checkTime()
+	if (utils.igt() > 9000 and utils.ingame()) then
+		return hardReset("Softlock suspected! Please investigate! Seed #: ")
+	end
+end
 
 local function overMinute(min)
 	return utils.igt() > min * 60
@@ -1702,12 +1707,12 @@ strategyFunctions = {
 			setYolo("vermilion")
 		end
 		local buyArray, sellArray
-		if (not inventory.contains("pokeball") or (not yolo and nidoAttack < 53)) then
-			sellArray = {{name="pokeball"}, {name="antidote"}, {name="tm34"}, {name="nugget"}}
-			buyArray = {{name="super_potion",index=1,amount=3}, {name="paralyze_heal",index=4,amount=2}, {name="repel",index=5,amount=3}}
+		if (inventory.contains("pokeball") or (not yolo and nidoAttack < 53)) then
+			sellArray = {{name="pokeball"}, {name="antidote"}}
+			buyArray = {{name="paralyze_heal",index=4,amount=4}, {name="repel",index=5,amount=6}}
 		else
-			sellArray = {{name="antidote"}, {name="tm34"}, {name="nugget"}}
-			buyArray = {{name="super_potion",index=1,amount=3}, {name="repel",index=5,amount=3}}
+			sellArray = {{name="antidote"}}
+			buyArray = {{name="paralyze_heal",index=4,amount=4}, {name="repel",index=5,amount=6}}
 		end
 		return shop.transaction{
 			sell = sellArray,
@@ -1932,24 +1937,9 @@ strategyFunctions = {
 	end,
 
 	shopBuffs = function()
-		local minSpecial = 45
-		if (yolo) then
-			minSpecial = minSpecial - 1
-		end
-		if (nidoAttack >= 54 and nidoSpecial >= minSpecial) then
-			riskGiovanni = true
-			--print("Giovanni skip strats!")
-		end
-
-		local xspecAmt = 4
-		if (riskGiovanni) then
-			xspecAmt = xspecAmt + 1
-		elseif (nidoSpecial < 46) then
-			xspecAmt = xspecAmt - 1
-		end
 		return shop.transaction{
 			direction = "Up",
-			buy = {{name="x_accuracy", index=0, amount=10}, {name="x_speed", index=5, amount=4}, {name="x_special", index=6, amount=xspecAmt}}
+			buy = {{name="x_accuracy", index=0, amount=10}, {name="x_speed", index=5, amount=4}, {name="x_special", index=6, amount=9}}
 		}
 	end,
 
@@ -1987,6 +1977,7 @@ strategyFunctions = {
 	shopTM07 = function()
 		return shop.transaction{
 			direction = "Up",
+			sell = {{name="nugget"}, {name="tm34"}},
 			buy = {{name="horn_drill", index=3}}
 		}
 	end,
@@ -1994,8 +1985,20 @@ strategyFunctions = {
 	shopRepels = function()
 		return shop.transaction{
 			direction = "Up",
-			buy = {{name="super_repel", index=3, amount=9}}
+			buy = {{name="super_repel", index=3, amount=7}, {name="super_potion", index=1, amount=4}}
 		}
+	end,
+
+	celadonElevator = function()
+		if (textbox.isActive()) then
+			canProgress = true
+			menu.select(0, false, true)
+		else
+			if (canProgress) then
+				return true
+			end
+			player.interact("Up")
+		end
 	end,
 
 	swapRepels = function()
@@ -2278,11 +2281,13 @@ strategyFunctions = {
 		if (battle.isActive()) then
 			local forced
 			if (pokemon.isOpponent("weezing")) then
-				if (opponentDamaged(2)) then
+				if (battle.pp("horn_drill") >= 5) then
 					inventory.use("pokeflute", nil, true)
 					return false
+				else
+					inventory.use("elixer", "nidoking", true)
+					return false
 				end
-				forced = "thunderbolt"
 				strategies.canDie = true
 			end
 			battle.fight(forced)
@@ -2512,9 +2517,6 @@ strategyFunctions = {
 
 	pickMaxEther = function()
 		if (not canProgress) then
-			if (maxEtherSkip) then
-				return true
-			end
 			if (pb_memory.value("player", "moving") == 0) then
 				if (player.isFacing("Right")) then
 					canProgress = true
@@ -2703,7 +2705,7 @@ strategyFunctions = {
 			enableFull = true
 		end
 		local min_recovery = combat.healthFor("LanceGyarados")
-		return strategyFunctions.potion({hp=min_recovery, full=enableFull, chain=true})
+		return strategyFunctions.potion({hp=min_recovery, full=false, chain=false})
 	end,
 
 	lance = function()
@@ -2719,19 +2721,12 @@ strategyFunctions = {
 		end
 		local skyDmg = combat.healthFor("BlueSky")
 		local wingDmg = combat.healthFor("BluePidgeot")
-		return strategyFunctions.potion({hp=skyDmg-50, yolo=wingDmg, full=true})
+		return strategyFunctions.potion({hp=skyDmg-50, yolo=wingDmg, full=false})
 	end,
 
 	blue = function()
 		if (battle.isActive()) then
 			canProgress = true
-			if (pb_memory.value("battle", "turns") > 0 and not isPrepared("x_accuracy", "x_speed")) then
-				local toPotion = inventory.contains("full_restore", "super_potion")
-				if (battle.potionsForHit(toPotion)) then
-					inventory.use(toPotion, nil, true)
-					return false
-				end
-			end
 			if (not tempDir) then
 				if (nidoSpecial > 45 and pokemon.index(0, "speed") > 52 and inventory.contains("x_special")) then
 					tempDir = "x_special"
