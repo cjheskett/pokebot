@@ -5,7 +5,6 @@ local utils = require("util.utils")
 local client = nil
 local timeStopped = false
 local testVal = 1
-local socket = require "socket"
 
 function bridge.test()
 	if (testVal % 300 == 0) then
