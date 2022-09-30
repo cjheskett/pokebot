@@ -6,13 +6,6 @@ local client = nil
 local timeStopped = false
 local testVal = 1
 
-function bridge.test()
-	if (testVal % 300 == 0) then
-		comm.socketServerSend("startorsplit\r\n")
-	end
-	testVal = testVal + 1
-end
-
 local function send(prefix, body)
 	if (client) then
 		local message = prefix
