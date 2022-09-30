@@ -331,7 +331,7 @@ local paths = {
 	-- Rival 5
 	{212, {5,3}, {s="a",a="Silph Rival"}, {4,3}, {4,2}, {3,2}, {c="potion",b=false}, {s="silphRival"}, {3,7}, {c="potion",b=true,yolo=true}, {5,7}},
 	-- Giovanni
-	{235, {3,2}, {s="a",a="Silph Giovanni"}, {c="setThrash",disable=true}, {3,11}, {2,11}, {2,16}, {s="interact",dir="Right"}, {c="setThrash",disable=false}, {2,15}, {5,15}, {s="potion",hp=16,yolo=12}, {6,15}, {6,14}, {s="item",item="elixer",poke="nidoking"}, {s="interact",dir="Up"}, {6,13}, {s="fightXAccuracy"}, {s="fightSilphGiovanni"}, {6,12}, {6,14}, {3,14}, {3,2}},
+	{235, {3,2}, {s="a",a="Silph Giovanni"}, {c="setThrash",disable=true}, {3,11}, {2,11}, {2,16}, {s="item",item="elixer",poke="nidoking"}, {s="interact",dir="Right"}, {s="fightSilphJerkwad"}, {c="setThrash",disable=false}, {2,15}, {5,15}, {s="potion",hp=16,yolo=12}, {6,15}, {6,14}, {s="interact",dir="Up"}, {6,13}, {s="fightXAccuracy"}, {s="fightSilphGiovanni"}, {6,12}, {6,14}, {3,14}, {3,2}},
 	-- To 10F
 	{212, {5,7}, {3,7}, {3,3}, {5,3}},
 	{208, {11,11}, {16,11}, {16,9}, {20,9}, {20,0}},
@@ -356,9 +356,9 @@ local paths = {
 	-- Exit building
 	{190, {0,4}, {8,4}},
 	-- Enter Safari City
-	{29, {40,8}, {s="item",item="repel",chain=true}, {s="bicycle"}, {50,8}},
+	{29, {40,8}, {s="bicycle"}, {50,8}},
 	-- Safari City
-	{7, {0,16}, {s="a",a="Safari Zone"}, {3,16}, {3,20}, {23,20}, {23,14}, {29,14}, {29,15}, {35,15}, {35,8}, {37,8}, {37,2}, {22,2}, {22,4}, {18,4}, {18,3}},
+	{7, {0,16}, {s="a",a="Safari Zone"}, {3,16}, {3,20}, {23,20}, {23,14}, {29,14}, {29,15}, {35,15}, {35,8}, {37,8}, {37,2}, {22,2}, {22,4}, {18,4}, {s="item",item="repel"}, {18,3}},
 	-- Safari entrance
 	{156, {3,5}, {3,2}, {4,2}, {s="confirm",dir="Right"}},
 	-- Safari 1

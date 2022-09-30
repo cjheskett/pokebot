@@ -3,7 +3,7 @@
 GAME_NAME		= "red" -- Only currently supported option
 RESET_FOR_TIME	= true	-- Set to false if you just want to see the bot finish a run
 
-local CUSTOM_SEED	= nil --1664439255 -- Set to a known seed to replay it, or leave nil for random ones
+local CUSTOM_SEED	= nil --1664558633 -- Set to a known seed to replay it, or leave nil for random ones
 local PAINT_ON		= true -- Displays contextual information while the bot runs
 
 -- Start code (hard hats on)
@@ -247,6 +247,7 @@ while true do
 	end
 	if (PAINT_ON) then
 		paint.draw(currentMap)
+		--gui.text(0, 42, tostring(strategies.canDie))
 	end
 	strategies.checkTime()
 	input.advance()

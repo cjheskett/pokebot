@@ -1444,6 +1444,7 @@ strategyFunctions = {
 			local opponent = battle.opponent()
 			if (opponent == "pidgeotto") then
 				canProgress = true
+				forced = "horn_attack"
 				combat.disableThrash = true
 				if (pb_memory.value("battle", "accuracy") < 7) then
 					local __, turns = combat.bestMove()
@@ -1478,6 +1479,8 @@ strategyFunctions = {
 					return false
 				end
 				combat.disableThrash = opponentDamaged()
+			elseif (opponent == "abra") then
+				forced = "horn_attack"
 			else
 				combat.disableThrash = false
 			end
@@ -2231,6 +2234,23 @@ strategyFunctions = {
 		end
 	end,
 
+	fightSilphJerkwad = function()
+		if (battle.isActive()) then
+			canProgress = true
+			local forced
+			if (pokemon.isOpponent("cubone")) then
+				forced = "ice_beam"
+			end
+			if (prepare("x_accuracy")) then
+				battle.automate(forced)
+			end
+		elseif (canProgress) then
+			return true
+		else
+			textbox.handle()
+		end
+	end,
+
 	fightSilphGiovanni = function()
 		if (battle.isActive()) then
 			canProgress = true
@@ -2281,6 +2301,7 @@ strategyFunctions = {
 		if (battle.isActive()) then
 			local forced
 			if (pokemon.isOpponent("weezing")) then
+				strategies.canDie = true
 				if (battle.pp("horn_drill") >= 5) then
 					inventory.use("pokeflute", nil, true)
 					return false
@@ -2288,7 +2309,6 @@ strategyFunctions = {
 					inventory.use("elixer", "nidoking", true)
 					return false
 				end
-				strategies.canDie = true
 			end
 			battle.fight(forced)
 			canProgress = true

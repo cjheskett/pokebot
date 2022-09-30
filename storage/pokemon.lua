@@ -36,6 +36,7 @@ local pokeIDs = {
 	metapod = 124,
 	hypno = 129,
 	weezing = 143,
+	abra = 148,
 	alakazam = 149,
 	pidgeotto = 150,
 	pidgeot = 151,
