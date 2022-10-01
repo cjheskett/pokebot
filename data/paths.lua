@@ -276,7 +276,7 @@ local paths = {
 	-- Pokemon Tower
 	{142, {10,17}, {10,10}, {18,10}, {18,9}},
 	-- F2: Rival
-	{143, {18,9}, {c="setThrash",disable=true}, {18,7}, {16,7}, {16,5}, {15,5}, {s="lavenderRival"}, {5,5}, {5,8}, {3,8}, {3,9}},
+	{143, {18,9}, {18,7}, {16,7}, {16,5}, {15,5}, {s="lavenderRival"}, {c="setThrash",disable=true}, {5,5}, {5,8}, {3,8}, {3,9}},
 	-- F3
 	{144, {3,9}, {3,10}, {6,10}, {6,13}, {8,13}, {8,6}, {17,6}, {17,9}, {18,9}},
 	-- F4
@@ -379,7 +379,7 @@ local paths = {
 	{7, {19,28}, {s="a",a="Koga's Gym"}, {5,28}, {5,27}},
 	-- Koga
 	-- TODO save turn frames?
-	{157, {4,17}, {9,17}, {9,9}, {7,9}, {s="interact",dir="Up"}, {9,9}, {9,1}, {1,1}, {1,2}, {s="potion",hp="KogaHypno",yolo=18,chain=true}, {1,3}, {2,3}, {2,5}, {1,5}, {c="potion",b=false}, {1,7}, {s="fightHypno"}, {1,9}, {2,9}, {4,9}, {s="interact",dir="Down"}, {s="fightKoga"}, {s="split"}, {1,9}, {1,5}, {2,5}, {2,3}, {1,3}, {1,1}, {9,1}, {9,16}, {5,16}, {5,18}},
+	{157, {4,17}, {9,17}, {9,9}, {7,9}, {s="interact",dir="Up"}, {9,9}, {9,1}, {1,1}, {1,2}, {s="potion",hp="KogaHypno",yolo=18}, {1,3}, {2,3}, {2,5}, {1,5}, {c="potion",b=false}, {1,7}, {s="fightHypno"}, {1,9}, {2,9}, {4,9}, {s="interact",dir="Down"}, {s="fightKoga"}, {s="split"}, {1,9}, {1,5}, {2,5}, {2,3}, {1,3}, {1,1}, {9,1}, {9,16}, {5,16}, {5,18}},
 
 -- 12: KOGA
 
@@ -390,9 +390,9 @@ local paths = {
 	-- Fly home
 	{7, {27,28}, {s="fly",dest="pallet",map=0}},
 	-- Pallet to Cinnabar
-	{0, {5,6}, {s="item",item="super_repel",chain=true}, {s="item",item="rare_candy",amount=3,poke="nidoking",chain=true}, {s="teach",move="surf",poke="squirtle",replace="tail_whip",chain=true}, {s="bicycle"}, {s="allowDeath",on=false}, {3,6}, {s="dodgeGirl"}, {3,17}, {s="skill",move="surf",dir="Right",x=4}, {4,18}},
+	{0, {5,6}, {s="bicycle"}, {3,6}, {s="dodgeGirl"}, {3,17}, {s="item",item="super_repel",chain=true}, {s="item",item="rare_candy",amount=3,poke="nidoking",chain=true}, {s="teach",move="surf",poke="squirtle",replace="tail_whip"}, {s="skill",move="surf",dir="Right",x=4}, {4,18}},
 	-- To Cinnabar
-	{32, {4,0}, {4,14}, {3,14}, {3,90}},
+	{32, {4,0}, {4,14}, {s="allowDeath",on=false}, {3,14}, {3,90}},
 	-- Enter Cinnabar Mansion
 	{8, {3,0}, {s="a",a="Cinnabar Mansion"}, {3,4}, {6,4}, {6,3}},
 	-- F1
@@ -402,9 +402,9 @@ local paths = {
 	-- F3
 	{215, {6,2}, {11,2}, {11,6}, {10,6}, {s="confirm",dir="Up"}, {14,6}, {14,11}, {16,11}, {16,14}},
 	-- F1 drop
-	{165, {16,14}, {16,15}, {13,15}, {13,21}, {21,21}, {21,23}},
+	{165, {16,14}, {16,15}, {13,15}, {13,20}, {21,20}, {21,23}},
 	-- B1
-	{216, {23,22}, {23,15}, {17,15}, {17,19}, {19,19}, {19,24}, {s="interact",dir="Down"}, {s="teach",move="strength",poke="squirtle",replace="tackle",chain=true}, {s="teach",move="strength",poke="nidoking",replace="bubblebeam", chain=true}, {s="item",item="repel"}, {19,26}, {18,26}, {s="confirm",dir="Up"}, {14,26}, {14,22}, {12,22}, {12,15}, {24,15}, {24,18}, {26,18}, {26,6}, {24,6}, {24,4}, {20,4}, {s="confirm",dir="Up"}, {24,4}, {24,6}, {12,6}, {12,2}, {11,2}, {s="interact",dir="Left"}, {12,2}, {12,7}, {5,7}, {5,12}, {s="interact",dir="Down"}, {5,12}, {s="skill",move="dig",map=216}},
+	{216, {23,22}, {23,15}, {17,15}, {17,19}, {19,19}, {19,24}, {s="interact",dir="Down"}, {s="teach",move="strength",poke="squirtle",replace="tackle",chain=true}, {s="teach",move="blizzard",poke="nidoking",replace="bubblebeam", chain=true}, {s="item",item="repel"}, {19,26}, {18,26}, {s="confirm",dir="Up"}, {14,26}, {14,22}, {12,22}, {12,15}, {24,15}, {24,18}, {26,18}, {26,6}, {24,6}, {24,4}, {20,4}, {s="confirm",dir="Up"}, {24,4}, {24,6}, {12,6}, {12,2}, {11,2}, {s="interact",dir="Left"}, {12,2}, {12,7}, {5,7}, {5,12}, {s="interact",dir="Down"}, {5,12}, {s="skill",move="dig",map=216}},
 	-- Celadon once again
 	{6, {41,10}, {s="bicycle"}, {41,13}, {36,13}, {36,23}, {25,23}, {25,30}, {35,30}, {35,31}, {s="skill",move="cut",dir="Down",done=0x0D4D}, {35,34}, {5,34}, {5,29}, {12,29}, {12,27}},
 	-- Erika
@@ -417,7 +417,7 @@ local paths = {
 	-- Cinnabar
 	{8, {11,12}, {s="bicycle"}, {18,12}, {18,3}},
 	-- Cinnabar Gym
-	{166, {16,17}, {s="a",a="Blaine's Gym"}, {16,14}, {18,14}, {18,10}, {15,10}, {15,8}, {s="confirm",dir="Up"}, {16,8}, {16,7}, {18,7}, {18,1}, {12,1}, {12,2}, {10,2}, {s="confirm",dir="Up",type="B"}, {12,2}, {12,7}, {10,7}, {10,8}, {9,8}, {s="confirm",dir="Up",type="B"}, {9,11}, {12,11}, {12,13}, {10,13}, {10,14}, {9,14}, {s="confirm",dir="Up",type="B"}, {9,16}, {1,16}, {1,14}, {s="confirm",dir="Up"}, {2,14}, {2,13}, {4,13}, {4,9}, {1,9}, {1,8}, {s="confirm",dir="Up",type="B"}, {2,8}, {2,7}, {4,7}, {4,5}, {3,5}, {3,4}, {c="potion",b=false}, {s="waitToFight",dir="Up"}, {s="split"}, {s="waitToReceive"}, {s="skill",move="dig",map=166}},
+	{166, {16,17}, {s="a",a="Blaine's Gym"}, {16,14}, {18,14}, {18,10}, {15,10}, {15,8}, {s="confirm",dir="Up"}, {16,8}, {16,7}, {18,7}, {18,1}, {12,1}, {12,2}, {10,2}, {s="confirm",dir="Up",type="B"}, {12,2}, {12,7}, {10,7}, {10,8}, {9,8}, {s="confirm",dir="Up",type="B"}, {9,11}, {12,11}, {12,13}, {10,13}, {10,14}, {9,14}, {s="confirm",dir="Up",type="B"}, {9,16}, {1,16}, {1,14}, {s="confirm",dir="Up"}, {2,14}, {2,13}, {4,13}, {4,9}, {1,9}, {1,8}, {s="confirm",dir="Up",type="B"}, {2,8}, {2,7}, {4,7}, {4,5}, {3,5}, {c="potion",b=false}, {3,4}, {s="interact",dir="Up"}, {s="blaine"}, {s="split"}, {s="waitToReceive"}, {s="skill",move="dig",map=166}},
 
 -- 14: BLAINE
 
@@ -482,7 +482,7 @@ local paths = {
 
 	{246, {4,5}, {s="a",a="Bruno"},{s="ether"}, {4,2}, {s="interact",dir="Right"}, {s="bruno"}, {s="split"}, {4,0}},
 
-	{247, {4,5}, {s="a",a="Agatha"}, {s="potion",hp=113,chain=true}, {s="item",item="rare_candy",poke="nidoking"}, {4,2}, {s="interact",dir="Right"}, {s="agatha"}, {s="split"}, {4,1}, {s="prepareForLance"}, {s="item",item="elixer",poke="nidoking"}, {4,0}},
+	{247, {4,5}, {s="a",a="Agatha"}, {s="potion",hp=113}, {s="item",item="rare_candy",poke="nidoking"}, {4,2}, {s="interact",dir="Right"}, {s="agatha"}, {s="split"}, {4,1}, {s="prepareForLance"}, {s="item",item="elixer",poke="nidoking"}, {4,0}},
 
 	{113, {6,11}, {s="a",a="Lance"}, {6,2}, {s="lance"}, {s="waitToFight"}, {s="split"}, {5,2}, {5,1}, {s="prepareForBlue"}, {5,-1}},
 

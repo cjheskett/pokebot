@@ -2036,22 +2036,22 @@ strategyFunctions = {
 		if (battle.isActive()) then
 			canProgress = true
 			local forced
-			if (nidoSpecial > 44) then -- RISK
-				local __, enemyTurns = combat.enemyAttack()
-				if (enemyTurns and enemyTurns < 2 and pokemon.isOpponent("pidgeotto", "gyarados")) then
-					battle.automate()
-					return false
-				end
+			if (pokemon.isOpponent("pidgeotto") or pokemon.isOpponent("gyarados")) then
+				forced = "thunderbolt"
+			elseif (pokemon.isOpponent("growlithe")) then
+				forced = "bubblebeam"
+			else
+				forced = "thrash"
 			end
-			if (pokemon.isOpponent("gyarados") or prepare("x_accuracy")) then
-				battle.automate()
-			end
+			battle.automate(forced)
 		elseif (canProgress) then
 			return true
 		else
-			input.cancel()
+			textbox.handle()
 		end
 	end,
+
+	
 
 	pokeDoll = function()
 		if (battle.isActive()) then
@@ -2239,7 +2239,7 @@ strategyFunctions = {
 			canProgress = true
 			local forced
 			if (pokemon.isOpponent("cubone")) then
-				forced = "ice_beam"
+				forced = "bubblebeam"
 			end
 			if (prepare("x_accuracy")) then
 				battle.automate(forced)
@@ -2262,7 +2262,7 @@ strategyFunctions = {
 					forced = "earthquake"
 				end
 			elseif (pokemon.isOpponent("rhyhorn")) then
-				forced = "ice_beam"
+				forced = "bubblebeam"
 			elseif (pokemon.isOpponent("kangaskhan")) then
 				forced = "horn_drill"
 			end
@@ -2282,7 +2282,7 @@ strategyFunctions = {
 			if (pokemon.isOpponent("hypno")) then
 				if (pokemon.info("nidoking", "hp") > combat.healthFor("KogaWeezing") * 0.9) then
 					if (combat.isDisabled(85)) then
-						forced = "ice_beam"
+						forced = "earthquake"
 					else
 						forced = "thunderbolt"
 					end
@@ -2370,17 +2370,10 @@ strategyFunctions = {
 			canProgress = true
 			local forced
 			local curr_hp, red_hp = pokemon.index(0, "hp"), redHP()
-			local razorDamage = 34
-			if (curr_hp > razorDamage and curr_hp - razorDamage < red_hp) then
-				if (opponentDamaged()) then
-					forced = "thunderbolt"
-				elseif (nidoSpecial < 45) then
-					forced = "ice_beam"
-				else
-					forced = "thunderbolt"
-				end
-			elseif (riskGiovanni) then
-				forced = "ice_beam"
+			if (pokemon.isOpponent("tangela")) then
+				forced = "blizzard"
+			else
+				forced = "earthquake"
 			end
 			battle.automate(forced)
 		elseif (canProgress) then
@@ -2406,6 +2399,26 @@ strategyFunctions = {
 		end
 	end,
 
+	blaine = function()
+		if (battle.isActive()) then
+			canProgress = true
+			local forced
+			if (pokemon.isOpponent("growlithe")) then
+				forced = "earthquake"
+			else
+				forced = "horn_drill"
+			end
+			if (prepare("x_accuracy")) then
+				battle.automate(forced)
+			end			
+		elseif (canProgress) then
+			return true
+		else
+			textbox.handle()
+		end
+	end,
+
+-- 13: BLAINE
 -- 14: SABRINA
 
 	earthquakeElixer = function(data)
@@ -2445,18 +2458,30 @@ strategyFunctions = {
 	end,
 
 	fightGiovanniMachoke = function(data)
-		return prepare("x_special")
+		if (battle.isActive()) then
+			canProgress = true
+			local forced
+			if (pokemon.isOpponent("machoke")) then
+				forced = "horn_drill"
+			else
+				forced = "blizzard"
+			end
+			if (prepare("x_accuracy")) then
+				battle.automate(forced)
+			end			
+		elseif (canProgress) then
+			return true
+		else
+			textbox.handle()
+		end
 	end,
 
 	fightGiovanni = function()
 		if (battle.isActive()) then
 			canProgress = true
-			if (riskGiovanni and not prepare("x_special")) then
-				return false
-			end
 			local forced
 			if (pokemon.isOpponent("rhydon")) then
-				forced = "ice_beam"
+				forced = "blizzard"
 			end
 			battle.automate(forced)
 		elseif (canProgress) then
@@ -2470,26 +2495,25 @@ strategyFunctions = {
 
 	viridianRival = function()
 		if (battle.isActive()) then
-			if (not canProgress) then
-				if (nidoSpecial < 45 or pokemon.index(0, "speed") < 134) then
-					tempDir = "x_special"
-				else
-					--print("Skip X Special strats!")
-				end
-				canProgress = true
-			end
-			if (prepare("x_accuracy", tempDir)) then
+			x_spec = pb_memory.value("battle", "x_special")
+			canProgress = true
+			if (prepare("x_accuracy")) then
 				local forced
 				if (pokemon.isOpponent("pidgeot")) then
-					forced = "thunderbolt"
-				elseif (riskGiovanni) then
-					if (pokemon.isOpponent("rhyhorn") or opponentDamaged()) then
-						forced = "ice_beam"
-					elseif (pokemon.isOpponent("gyarados")) then
+					if (opponentDamaged()) then
 						forced = "thunderbolt"
-					elseif (pokemon.isOpponent("growlithe", "alakazam")) then
-						forced = "earthquake"
+					else
+						forced = "blizzard"
 					end
+				elseif (pokemon.isOpponent("growlithe")) then
+					if (x_spec == 7) then
+						inventory.use("x_special", nil, true)
+						return false
+					else
+						forced = "horn_drill"
+					end
+				else
+					forced = "horn_drill"
 				end
 				battle.automate(forced)
 			end
@@ -2665,17 +2689,7 @@ strategyFunctions = {
 			canProgress = true
 			local forced
 			if (pokemon.isOpponent("onix")) then
-				forced = "ice_beam"
-				-- local curr_hp, red_hp = pokemon.info("nidoking", "hp"), redHP()
-				-- if (curr_hp > red_hp) then
-				-- 	local enemyMove, enemyTurns = combat.enemyAttack()
-				-- 	if (enemyTurns and enemyTurns > 1) then
-				-- 		local rockDmg = enemyMove.damage
-				-- 		if (curr_hp - rockDmg <= red_hp) then
-				-- 			forced = "thunderbolt"
-				-- 		end
-				-- 	end
-				-- end
+				forced = "horn_drill"
 			end
 			if (prepare("x_accuracy")) then
 				battle.automate(forced)
@@ -2690,24 +2704,19 @@ strategyFunctions = {
 	agatha = function()
 		if (battle.isActive()) then
 			canProgress = true
+			local forced
 			if (combat.isSleeping()) then
 				inventory.use("pokeflute", nil, true)
 				return false
 			end
 			if (pokemon.isOpponent("gengar")) then
-				local currentHP = pokemon.info("nidoking", "hp")
-				if (not yolo and currentHP <= 56 and not isPrepared("x_accuracy", "x_speed")) then
-					local toPotion = inventory.contains("full_restore", "super_potion")
-					if (toPotion) then
-						inventory.use(toPotion, nil, true)
-						return false
-					end
-				end
-				if (not prepare("x_accuracy", "x_speed")) then
+				if (not prepare("x_special")) then
 					return false
 				end
+			elseif (pokemon.isOpponent("golbat")) then
+				forced = "blizzard"
 			end
-			battle.automate()
+			battle.automate(forced)
 		elseif (canProgress) then
 			return true
 		else
