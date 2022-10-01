@@ -1949,12 +1949,12 @@ strategyFunctions = {
 	shopVending = function()
 		return shop.vend{
 			direction = "Up",
-			buy = {{name="fresh_water", index=0}, {name="soda_pop", index=1}}
+			buy = {{name="soda_pop", index=1}}
 		}
 	end,
 
 	giveWater = function()
-		if (not inventory.contains("fresh_water", "soda_pop")) then
+		if (not inventory.contains("soda_pop")) then
 			return true
 		end
 		if (textbox.isActive()) then

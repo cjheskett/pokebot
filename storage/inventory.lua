@@ -47,6 +47,7 @@ local items = {
 	bubblebeam = 211,
 	water_gun = 212,
 	ice_beam = 213,
+	blizzard = 214,
 	thunderbolt = 224,
 	earthquake = 226,
 	dig = 228,
