@@ -3,13 +3,13 @@
 GAME_NAME		= "red" -- Only currently supported option
 RESET_FOR_TIME	= true	-- Set to false if you just want to see the bot finish a run
 
-local CUSTOM_SEED	= nil --1664559482 -- Set to a known seed to replay it, or leave nil for random ones
+local CUSTOM_SEED	= nil -- Set to a known seed to replay it, or leave nil for random ones
 local PAINT_ON		= true -- Displays contextual information while the bot runs
 
 -- Start code (hard hats on)
 
 local START_WAIT = 99
-local VERSION = "1.5"
+local VERSION = "1.6"
 
 local battle = require "action.battle"
 local textbox = require "action.textbox"
