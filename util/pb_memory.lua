@@ -60,6 +60,7 @@ local memoryNames = {
 		menu = 0x0C50,
 		accuracy = 0x0D1E,
 		x_accuracy = 0x1063,
+		x_special = 0xCD1D,
 		disabled = 0x0CEE,
 		paralyzed = 0x1018,
 

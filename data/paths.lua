@@ -259,7 +259,7 @@ local paths = {
 	-- Leave Celadon
 	{6, {8,14}, {s="bicycle"}, {8,15}, {2,15}, {2,18}, {-1,18}},
 	-- Cut out of Celadon
-	{27, {39,10}, {34,10}, {s="teach",move="horn_drill",replace="bubblebeam",full=true,chain=true}, {s="skill",move="cut",dir="Up",done=0x0D4D}, {34,6}, {27,6}, {27,4}, {23,4}},
+	{27, {39,10}, {34,10}, {s="skill",move="cut",dir="Up",done=0x0D4D}, {34,6}, {27,6}, {27,4}, {23,4}},
 	-- Old man's hall
 	{186, {7,2}, {-1,2}},
 	-- To the Fly house
@@ -270,13 +270,13 @@ local paths = {
 -- 9: FLY
 
 	-- Fly to Lavender
-	{27, {7,6}, {s="swapRepels"}, {s="teach",move="fly",poke="spearow",alt="pidgey",chain=true}, {s="teach",move="horn_drill",replace="bubblebeam",chain=true}, {s="item",item="super_repel",chain=true}, {s="potion",hp=6,chain=true}, {s="teach",move="rock_slide",replace="mega_punch",chain=true}, {s="fly",dest="lavender",map=4}},
+	{27, {7,6}, {s="swapRepels"}, {s="teach",move="fly",poke="spearow",alt="pidgey",chain=true}, {s="item",item="super_repel",chain=true}, {s="potion",hp=6,chain=true}, {s="teach",move="rock_slide",replace="mega_punch",chain=true}, {s="fly",dest="lavender",map=4}},
 	-- To the tower
 	{4, {3,6}, {s="a",a="Pokemon Tower"}, {14,6}, {14,5}},
 	-- Pokemon Tower
 	{142, {10,17}, {10,10}, {18,10}, {18,9}},
 	-- F2: Rival
-	{143, {18,9}, {c="setThrash",disable=true}, {18,7}, {16,7}, {16,5}, {15,5}, {s="lavenderRival"}, {5,5}, {5,8}, {3,8}, {3,9}},
+	{143, {18,9}, {18,7}, {16,7}, {16,5}, {15,5}, {s="lavenderRival"}, {c="setThrash",disable=true}, {5,5}, {5,8}, {3,8}, {3,9}},
 	-- F3
 	{144, {3,9}, {3,10}, {6,10}, {6,13}, {8,13}, {8,6}, {17,6}, {17,9}, {18,9}},
 	-- F4
@@ -284,7 +284,7 @@ local paths = {
 	-- F5
 	{146, {3,9}, {4,9}, {4,11}, {s="interact",dir="Down"}, {4,6}, {13,6}, {13,9}, {9,9}, {9,12}, {14,12}, {14,10}, {18,10}, {s="allowDeath",on=false}, {18,9}},
 	-- F6
- 	{147, {18,9}, {18,7}, {15,7}, {15,3}, {11,3}, {11,5}, {10,5}, {s="interact",dir="Left"}, {10,6}, {6,6}, {6,7}, {s="interact",dir="Down"}, {6,14}, {10,14}, {10,16}, {s="pokeDoll"}, {9,16}},
+ 	{147, {18,9}, {18,7}, {15,7}, {15,3}, {11,3}, {11,5}, {10,5}, {s="interact",dir="Left"}, {10,6}, {6,6}, {6,7}, {s="interact",dir="Down"}, {s="teach",move="horn_drill",replace="rock_slide"}, {6,14}, {10,14}, {10,16}, {s="pokeDoll"}, {9,16}},
 	-- F7: Top
 	{148, {9,16}, {10,16}, {10,9}, {s="fightXAccuracy"}, {c="setThrash",disable=false}, {10,7}, {s="thunderboltFirst"}, {10,4}, {s="interact",dir="Up"}},
 	-- Old man's house
@@ -293,7 +293,7 @@ local paths = {
 -- 10: POKéFLUTE
 
 	-- Lavender -> Celadon
-	{4, {7,10}, {s="split"}, {s="teach",move="ice_beam",replace="rock_slide", chain=true}, {s="fly",dest="celadon",map=6}},
+	{4, {7,10}, {s="split"}, {s="fly",dest="celadon",map=6}},
 	-- To Celadon Center
 	{6, {41,10}, {41,9}},
 	-- Celadon Center
@@ -390,21 +390,21 @@ local paths = {
 	-- Fly home
 	{7, {27,28}, {s="fly",dest="pallet",map=0}},
 	-- Pallet to Cinnabar
-	{0, {5,6}, {s="item",item="super_repel",chain=true}, {s="item",item="rare_candy",amount=3,poke="nidoking",chain=true}, {s="teach",move="surf",poke="squirtle",replace="tail_whip",chain=true}, {s="bicycle"}, {s="allowDeath",on=false}, {3,6}, {s="dodgeGirl"}, {3,17}, {s="skill",move="surf",dir="Right",x=4}, {4,18}},
+	{0, {5,6}, {s="bicycle"}, {3,6}, {s="dodgeGirl"}, {3,17}, {s="item",item="super_repel",chain=true}, {s="item",item="rare_candy",amount=3,poke="nidoking",chain=true}, {s="teach",move="surf",poke="squirtle",replace="tail_whip"}, {s="skill",move="surf",dir="Right",x=4}, {4,18}},
 	-- To Cinnabar
-	{32, {4,0}, {4,14}, {3,14}, {3,90}},
+	{32, {4,0}, {4,14}, {s="allowDeath",on=false}, {3,14}, {3,90}},
 	-- Enter Cinnabar Mansion
 	{8, {3,0}, {s="a",a="Cinnabar Mansion"}, {3,4}, {6,4}, {6,3}},
 	-- F1
 	{165, {5,27}, {5,10}},
 	-- F2
-	{214, {5,11}, {10,11}, {10,5}, {6,5}, {6,1}},
+	{214, {5,11}, {10,11}, {10,4}, {6,4}, {6,1}},
 	-- F3
 	{215, {6,2}, {11,2}, {11,6}, {10,6}, {s="confirm",dir="Up"}, {14,6}, {14,11}, {16,11}, {16,14}},
 	-- F1 drop
-	{165, {16,14}, {16,15}, {13,15}, {13,20}, {s="cinnabarCarbos"}, {21,23}},
+	{165, {16,14}, {16,15}, {13,15}, {13,20}, {21,20}, {21,23}},
 	-- B1
-	{216, {23,22}, {23,15}, {21,15}, {s="item",item="repel",chain=true}, {s="item",item="carbos",poke="nidoking",close=true}, {17,15}, {17,19}, {18,19}, {18,23}, {17,23}, {17,26}, {18,26}, {s="confirm",dir="Up"}, {14,26}, {14,22}, {12,22}, {12,15}, {24,15}, {24,18}, {26,18}, {26,6}, {24,6}, {24,4}, {20,4}, {s="confirm",dir="Up"}, {24,4}, {24,6}, {12,6}, {12,2}, {11,2}, {s="interact",dir="Left"}, {12,2}, {12,7}, {4,7}, {4,9}, {2,9}, {s="interact",dir="Left"}, {5,9}, {5,10}, {s="teach",move="strength",poke="squirtle",replace="tackle",chain=true}, {s="item",item="rare_candy",amount=2,poke="nidoking",close=true}, {5,12}, {s="interact",dir="Down"}, {5,12}, {s="skill",move="dig",map=216}},
+	{216, {23,22}, {23,15}, {17,15}, {17,19}, {19,19}, {19,24}, {s="interact",dir="Down"}, {s="teach",move="strength",poke="squirtle",replace="tackle",chain=true}, {s="teach",move="blizzard",poke="nidoking",replace="bubblebeam", chain=true}, {s="item",item="repel"}, {19,26}, {18,26}, {s="confirm",dir="Up"}, {14,26}, {14,22}, {12,22}, {12,15}, {24,15}, {24,18}, {26,18}, {26,6}, {24,6}, {24,4}, {20,4}, {s="confirm",dir="Up"}, {24,4}, {24,6}, {12,6}, {12,2}, {11,2}, {s="interact",dir="Left"}, {12,2}, {12,7}, {5,7}, {5,12}, {s="interact",dir="Down"}, {5,12}, {s="skill",move="dig",map=216}},
 	-- Celadon once again
 	{6, {41,10}, {s="bicycle"}, {41,13}, {36,13}, {36,23}, {25,23}, {25,30}, {35,30}, {35,31}, {s="skill",move="cut",dir="Down",done=0x0D4D}, {35,34}, {5,34}, {5,29}, {12,29}, {12,27}},
 	-- Erika
@@ -417,7 +417,7 @@ local paths = {
 	-- Cinnabar
 	{8, {11,12}, {s="bicycle"}, {18,12}, {18,3}},
 	-- Cinnabar Gym
-	{166, {16,17}, {s="a",a="Blaine's Gym"}, {16,14}, {18,14}, {18,10}, {15,10}, {15,8}, {s="confirm",dir="Up"}, {16,8}, {16,7}, {18,7}, {18,1}, {12,1}, {12,2}, {10,2}, {s="confirm",dir="Up",type="B"}, {12,2}, {12,7}, {10,7}, {10,8}, {9,8}, {s="confirm",dir="Up",type="B"}, {9,11}, {12,11}, {12,13}, {10,13}, {10,14}, {9,14}, {s="confirm",dir="Up",type="B"}, {9,16}, {1,16}, {1,14}, {s="confirm",dir="Up"}, {2,14}, {2,13}, {4,13}, {4,9}, {1,9}, {1,8}, {s="confirm",dir="Up",type="B"}, {2,8}, {2,7}, {4,7}, {4,5}, {3,5}, {3,4}, {c="potion",b=false}, {s="waitToFight",dir="Up"}, {s="split"}, {s="waitToReceive"}, {s="skill",move="dig",map=166}},
+	{166, {16,17}, {s="a",a="Blaine's Gym"}, {16,14}, {18,14}, {18,10}, {15,10}, {15,8}, {s="confirm",dir="Up"}, {16,8}, {16,7}, {18,7}, {18,1}, {12,1}, {12,2}, {10,2}, {s="confirm",dir="Up",type="B"}, {12,2}, {12,7}, {10,7}, {10,8}, {9,8}, {s="confirm",dir="Up",type="B"}, {9,11}, {12,11}, {12,13}, {10,13}, {10,14}, {9,14}, {s="confirm",dir="Up",type="B"}, {9,16}, {1,16}, {1,14}, {s="confirm",dir="Up"}, {2,14}, {2,13}, {4,13}, {4,9}, {1,9}, {1,8}, {s="confirm",dir="Up",type="B"}, {2,8}, {2,7}, {4,7}, {4,5}, {3,5}, {c="potion",b=false}, {3,4}, {s="interact",dir="Up"}, {s="blaine"}, {s="split"}, {s="waitToReceive"}, {s="skill",move="dig",map=166}},
 
 -- 14: BLAINE
 
@@ -482,7 +482,7 @@ local paths = {
 
 	{246, {4,5}, {s="a",a="Bruno"},{s="ether"}, {4,2}, {s="interact",dir="Right"}, {s="bruno"}, {s="split"}, {4,0}},
 
-	{247, {4,5}, {s="a",a="Agatha"}, {s="potion",hp=113,full=true}, {4,2}, {s="interact",dir="Right"}, {s="agatha"}, {s="split"}, {4,1}, {s="prepareForLance"}, {s="item",item="elixer",poke="nidoking"}, {4,0}},
+	{247, {4,5}, {s="a",a="Agatha"}, {s="potion",hp=113}, {s="item",item="rare_candy",poke="nidoking"}, {4,2}, {s="interact",dir="Right"}, {s="agatha"}, {s="split"}, {4,1}, {s="prepareForLance"}, {s="item",item="elixer",poke="nidoking"}, {4,0}},
 
 	{113, {6,11}, {s="a",a="Lance"}, {6,2}, {s="lance"}, {s="waitToFight"}, {s="split"}, {5,2}, {5,1}, {s="prepareForBlue"}, {5,-1}},
 
