@@ -486,9 +486,9 @@ local paths = {
 
 	{113, {6,11}, {s="a",a="Lance"}, {6,2}, {s="lance"}, {s="waitToFight"}, {s="split"}, {5,2}, {5,1}, {s="prepareForBlue"}, {5,-1}},
 
-	{120, {4,3}, {s="a",a="Blue"}, {s="blue"}, {3,0}},
+	{120, {4,3}, {s="a",a="Blue"}, {s="blue"}, {s="split"}, {3,0}},
 
-	{118, {4,2}, {s="champion"}, {s="split"}}
+	{118, {4,2}, {s="champion"}}
 }
 
 return paths
