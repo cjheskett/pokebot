@@ -28,6 +28,7 @@ local deepRun, resetting
 local level4Nidoran = true
 local skipHiker, yolo, riskGiovanni, maxEtherSkip
 local hasInstantText = false
+local CFC = 0
 strategies.hardResetFlag = false
 
 
@@ -818,6 +819,41 @@ strategyFunctions = {
 	pressA = function(data)
 		input.press(data.dir, 2, true)
 		return true
+	end,
+
+	yoloball = function()
+		if (CFC > 315 and CFC < 325) then
+			input.press("A")
+		elseif (CFC > 465 and CFC < 545) then
+			local inputTable = {["Down"] = true, ["A"] = true}
+			joypad.set(inputTable)
+		elseif (CFC > 495 and CFC < 800) then 
+			local inputTable = {["B"] = true, ["A"] = true}
+			joypad.set(inputTable)
+		elseif (CFC < 800) then
+			local inputTable = {}
+			joypad.set(inputTable)
+		end
+
+		if (pb_memory.value("menu", "text_input") == 240) then
+			textbox.name()
+		elseif ((pb_memory.value("battle", "menu") == 95) and CFC > 800) then
+			input.press("A")
+		end
+		local hasNidoran = pokemon.inParty("nidoran")
+		if (hasNidoran) then
+			gui.text(0, 54, tostring(hasNidoran))
+			local nidoranLevel = pokemon.info("nidoran", "level")
+			level4Nidoran = nidoranLevel == 4
+			CFC = 0
+			return true
+		end
+		gui.text(0,42,CFC)
+		CFC = CFC + 1
+		if (CFC > 2000) then
+			return reset("Yoloball fail")
+		end
+		return false
 	end,
 
 	catchNidoran = function()
@@ -2814,6 +2850,7 @@ function strategies.softReset()
 	deepRun = false
 	resetting = nil
 	yolo = false
+	CFC = 0
 end
 
 return strategies
