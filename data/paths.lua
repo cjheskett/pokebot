@@ -40,7 +40,7 @@ local paths = {
 	{1, {29,20}, {15,20}, {15,18}, {7,18}, {s="nidoranManip"}, {4,18}, {4,17}, {2,17}, {2,16}, {s="pressA",dir="Up"}, {2,15}, {1,15}, {s="pressA",dir="Left"},{0,15},{0,16},{-1,16}},
 	-- Nidoran
 	--{33, {37,9}, {37,11}, {35,11}, {35,12}, {30,12}, {33,12}, {30,12}, {33,12}, {30,12}, {33,12}, {30,12}, {33,12}, {30,12}, {31,12}, {31,11}, {33,11}, {31,11}, {33,11}, {c="catchNidoran"}, {s="catchNidoran"}, {33,12}, {s="split"}, {37,12}, {37,9}, {40,9}},
-	{33, {39,9}, {37,9}, {37,10}, {s="pressA",dir="Down"}, {37,11}, {37,12}, {s="pressA",dir="Down"}, {37,14}, {36,14}, {s="pressA",dir="Left"},{34,14}, {s="pressA",dir="Left"},{33,14}, {33,12},{s="pressA",dir="Up"},{33,11}, {c="catchNidoran"}, {s="catchNidoran"}, {33,12}, {s="split"}, {37,12}, {37,9}, {40,9}},
+	{33, {39,9}, {37,9}, {37,10}, {s="pressA",dir="Down"}, {37,11}, {37,12}, {s="pressA",dir="Down"}, {37,14}, {36,14}, {s="pressA",dir="Left"},{34,14}, {s="pressA",dir="Left"},{33,14}, {33,12},{s="pressA",dir="Up"},{33,11}, {c="catchNidoran"}, {s="yoloball"}, {s="catchNidoran"}, {33,12}, {s="split"}, {37,12}, {37,9}, {40,9}},
 	--{33, {39, 9}, {s="a",a="Nidoran grass"}, {c="nidoranBackupExp"}, {c="encounters",limit=7,extra="spearow"}, {35, 9}, {35,12}, {33,12}, {c="catchNidoran"}, {s="catchNidoran"}, {33,12}, {s="split"}, {37,12}, {37,9}, {40,9}},
 
 -- 2: NIDORAN
