@@ -1446,31 +1446,6 @@ strategyFunctions = {
 				canProgress = true
 				forced = "horn_attack"
 				combat.disableThrash = true
-				if (pb_memory.value("battle", "accuracy") < 7) then
-					local __, turns = combat.bestMove()
-					local putIn, takeOut
-					if (turns == 1) then
-						local sacrifice
-						local temp = pokemon.inParty("pidgey", "spearow")
-						if (temp and pokemon.info(temp, "hp") > 0) then
-							sacrifice = temp
-						end
-						if (not sacrifice) then
-							if (yolo) then
-								temp = pokemon.inParty("oddish")
-							else
-								temp = pokemon.inParty("oddish", "paras", "squirtle")
-							end
-							if (temp and pokemon.info(temp, "hp") > 0) then
-								sacrifice = temp
-							end
-						end
-						if (sacrifice) then
-							battle.swap(sacrifice)
-							return false
-						end
-					end
-				end
 			elseif (opponent == "raticate") then
 				combat.disableThrash = opponentDamaged() or (not yolo and pokemon.index(0, "hp") < 32) -- RISK
 			elseif (opponent == "ivysaur") then

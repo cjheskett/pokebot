@@ -122,14 +122,14 @@ local paths = {
 	-- Out the house
 	{230, {2,1}, {2,8}},
 	-- Rival 2
-	{3, {9,12}, {s="a",a="Cerulean Rival"}, {21,12}, {21,6}, {s="rivalSandAttack"}, {21,-1}},
+	{3, {9,12}, {s="a",a="Cerulean Rival"}, {21,12}, {c="potion",b=false}, {21,6}, {s="rivalSandAttack"}, {21,-1}},
 	-- Nugget bridge
 	{35, {11,35}, {s="a",a="Nugget Bridge"}, {11,32}, {s="interact",dir="Up"}, {10,32}, {10,29}, {s="interact",dir="Up"}, {11,29}, {11,26}, {s="interact",dir="Up"}, {10,26}, {10,24}, {10,23}, {s="interact",dir="Up"}, {11,23}, {11,21}, {11,20}, {s="interact",dir="Up"}, {s="redbarMankey"}, {10,20}, {10,19}, {10,15}, {s="waitToFight"}, {s="split"}, {10,8}, {20,8}},
 
 -- 6: NUGGET BRIDGE
 
 	-- To Bill's
-	{36, {c="potion",b=false}, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {c="potion",b=true}, {36,5}, {38,5}, {38,4}, {45,4}, {45,3}},
+	{36, {0,8}, {9,8}, {9,7}, {11,7}, {11,9}, {14,9}, {14,6}, {15,6}, {15,4}, {17,4}, {17,7}, {18,7}, {s="interact",dir="Down"}, {20,7}, {20,8}, {23,8}, {27,8}, {27,6}, {35,6}, {35,4}, {36,4}, {s="interact",dir="Right"}, {s="thrashFight"}, {36,5}, {38,5}, {38,4}, {45,4}, {45,3}},
 	-- Save Bill
 	{88, {2,7}, {2,5}, {5,5}, {s="confirm",dir="Right"}, {1,5}, {s="interact",dir="Up"}, {4,5}, {s="interact",dir="Up"}, {s="waitToTalk"}, {s="item",item="rare_candy",chain=true}, {s="item",item="escape_rope"}},
 	-- Use Center
@@ -155,7 +155,7 @@ local paths = {
 -- 7: MISTY
 
 	-- Past the policeman
-	{3, {30,20}, {c="potion",b=true,yolo=true}, {8,20}, {8,12}, {27,12}, {27,11}},
+	{3, {30,20}, {8,20}, {8,12}, {27,12}, {27,11}},
 	-- Wrecked house
 	{62, {2,7}, {2,2}, {3,2}, {3,0}},
 	-- Cerulean Rocket
@@ -170,7 +170,7 @@ local paths = {
 	{74, {4,4}, {3,8}},
 	-- Oddish
 	-- TODO Bubblebeam split
-	{17, {17,14}, {s="a",a="Vermilion City"}, {c="catchOddish"}, {17,15}, {s="potion",hp=9,yolo=5}, {17,19}, {s="catchOddish"}, {11,29}, {s="potion",hp=9,yolo=5}, {11,29}, {s="waitToFight",dir="Down"}, {10,29}, {10,30}, {s="potion",hp=9,yolo=5}, {10,31}, {9,31}, {9,32}, {s="potion",hp=20,yolo=18}, {9,36}},
+	{17, {17,14}, {s="a",a="Vermilion City"}, {c="catchOddish"}, {17,15}, {17,19}, {s="catchOddish"}, {11,29}, {11,29}, {s="waitToFight",dir="Down"}, {10,29}, {10,30}, {10,31}, {9,31}, {9,32}, {9,36}},
 	-- Enter Vermilion
 	{5, {19,0}, {c="disableCatch"}, {19,6}, {21,6}, {21,14}, {23,14}, {30,14}, {30,26}, {18,26}, {18,31}},
 	-- Mew
@@ -178,7 +178,7 @@ local paths = {
 	-- First deck
 	{95, {27,0}, {27,1}, {26,1}, {26,7}, {2,7}, {2,6}},
 	-- Rival 3
-	{96, {2,4}, {2,11}, {3,11}, {3,12}, {s="potion",hp=20,yolo=16}, {37,12}, {37,8}, {s="rivalSandAttack"}, {37,5}, {36,5}, {36,4}},
+	{96, {2,4}, {2,11}, {3,11}, {c="potion",b=true}, {3,12}, {s="potion",hp=20,yolo=16}, {37,12}, {37,8}, {s="rivalSandAttack"}, {37,5}, {36,5}, {36,4}},
 	-- Old man Cut
 	{101, {0,7}, {0,4}, {4,4}, {4,3}, {s="interact",dir="Up"}, {4,5}, {0,5}, {0,7}},
 	-- Second deck out
