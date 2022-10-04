@@ -1,7 +1,7 @@
 -- Customization settings
 
 GAME_NAME		= "red" -- Only currently supported option
-RESET_FOR_TIME	= true	-- Set to false if you just want to see the bot finish a run
+RESET_FOR_TIME	= false	-- Set to false if you just want to see the bot finish a run
 
 local CUSTOM_SEED	= nil -- Set to a known seed to replay it, or leave nil for random ones
 local PAINT_ON		= true -- Displays contextual information while the bot runs
@@ -87,7 +87,13 @@ end ]]
 
 local function continue()
 	continued = true
+	gui.text(0,42,CFC)
 	local current = pb_memory.value("menu", "current")
+	if (strategies.holdA) then
+		if (CFC > 5 and CFC < 50) then
+			holdButton("A")
+		end
+	end
 	if (CFC > 243 and CFC < 525) then
 		bufferMenuInput()
 	elseif (CFC > 622 and CFC < 751) then
@@ -98,9 +104,9 @@ local function continue()
 	if (current == 32) then
 		continued = false
 		CFC = 0
+		strategies.holdA = false
 	end
 	CFC = CFC + 1
-	frameCount = frameCount + 1
 end
 
 local function choosePlayerNames()

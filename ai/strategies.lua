@@ -30,6 +30,7 @@ local skipHiker, yolo, riskGiovanni, maxEtherSkip
 local hasInstantText = false
 local CFC = 0
 strategies.hardResetFlag = false
+strategies.holdA = false
 
 
 local timeRequirements = {
@@ -805,12 +806,15 @@ strategyFunctions = {
 		}
 	end,
 
-	nidoranManip = function()
+	nidoranManip = function(data)
 		local main = pb_memory.value("menu", "main")
 		if (menu.pause()) then
 			local column = menu.getCol()
 			if(menu.save()) then
 				client.reboot_core()
+				if (data.shouldHold) then
+					strategies.holdA = true
+				end
 				return true
 			end
 		end
