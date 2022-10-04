@@ -155,15 +155,15 @@ local function overMinute(min)
 end
 
 local function resetTime(timeLimit, reason, once)
---	if (overMinute(timeLimit)) then
---		reason = "Took too long to "..reason
---		if (RESET_FOR_TIME) then
---			return reset(reason)
---		end
---		if (once) then
---			print(reason.." "..paint.elapsedTime())
---		end
---	end
+	if (overMinute(timeLimit)) then
+		reason = "Took too long to "..reason
+		if (RESET_FOR_TIME) then
+			return reset(reason)
+		end
+		if (once) then
+			print(reason.." "..paint.elapsedTime())
+		end
+	end
 end
 
 local function getTimeRequirement(name)
@@ -915,9 +915,6 @@ strategyFunctions = {
 			else
 				resetMessage = "find a Nidoran"
 			end
-			if (resetTime(timeLimit, resetMessage)) then
-				return true
-			end
 			if (not noDSum and overMinute(timeLimit - 0.25)) then
 				noDSum = true
 			end
@@ -1422,16 +1419,7 @@ strategyFunctions = {
 			strategies.moonEncounters = nil
 		end
 
-		local timeLimit = 26
-		if (nidoAttack > 15 and nidoSpeed > 14) then
-			timeLimit = timeLimit + 0.25
-		end
-		if (not skipHiker) then
-			timeLimit = timeLimit + 0.25
-		end
-		if (pokemon.inParty("paras")) then
-			timeLimit = timeLimit + 1.0
-		end
+		local timeLimit = 27
 		resetTime(timeLimit, "complete Mt. Moon", true)
 		return true
 	end,
@@ -1576,6 +1564,12 @@ strategyFunctions = {
 		else
 			textbox.handle()
 		end
+	end,
+
+	nuggetBridgeTime = function()
+		timeLimit = 34
+		resetTime(timeLimit, "finish Nugget Bridge", true)
+		return true
 	end,
 
 	thrashFight = function()
@@ -1847,6 +1841,7 @@ strategyFunctions = {
 			end
 			battle.automate(forced)
 		elseif (canProgress) then
+			resetTime(48, "beat Surge", true)
 			return true
 		else
 			textbox.handle()

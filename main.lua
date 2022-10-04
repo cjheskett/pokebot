@@ -9,7 +9,7 @@ local PAINT_ON		= true -- Displays contextual information while the bot runs
 -- Start code (hard hats on)
 
 local START_WAIT = 99
-local VERSION = "1.8"
+local VERSION = "1.9"
 
 local battle = require "action.battle"
 local textbox = require "action.textbox"

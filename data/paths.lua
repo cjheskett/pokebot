@@ -19,7 +19,7 @@ local paths = {
 	-- Viridian Mart
 	{42, {2,5}, {3,5}, {3,8}},
 	-- Backtracking
-	{1, {29,20}, {c="encounters",limit=8}, {29,21}, {26,21}, {26,30}, {20,30}, {20,36}},
+	{1, {29,20}, {c="encounters",limit=7}, {29,21}, {26,21}, {26,30}, {20,30}, {20,36}},
 	-- Parkour
 	{12, {10, 0}, {10,3}, {8,3}, {8,18}, {9,18}, {9,22}, {12,22}, {12,24}, {10,24}, {10,36}},
 	-- To Oak's lab
@@ -124,7 +124,7 @@ local paths = {
 	-- Rival 2
 	{3, {9,12}, {s="a",a="Cerulean Rival"}, {21,12}, {c="potion",b=false}, {21,6}, {s="rivalSandAttack"}, {21,-1}},
 	-- Nugget bridge
-	{35, {11,35}, {s="a",a="Nugget Bridge"}, {11,32}, {s="interact",dir="Up"}, {10,32}, {10,29}, {s="interact",dir="Up"}, {11,29}, {11,26}, {s="interact",dir="Up"}, {10,26}, {10,24}, {10,23}, {s="interact",dir="Up"}, {11,23}, {11,21}, {11,20}, {s="interact",dir="Up"}, {s="redbarMankey"}, {10,20}, {10,19}, {10,15}, {s="waitToFight"}, {s="split"}, {10,8}, {20,8}},
+	{35, {11,35}, {s="a",a="Nugget Bridge"}, {11,32}, {s="interact",dir="Up"}, {10,32}, {10,29}, {s="interact",dir="Up"}, {11,29}, {11,26}, {s="interact",dir="Up"}, {10,26}, {10,24}, {10,23}, {s="interact",dir="Up"}, {11,23}, {11,21}, {11,20}, {s="interact",dir="Up"}, {s="redbarMankey"}, {10,20}, {10,19}, {10,15}, {s="waitToFight"}, {s="split"}, {s="nuggetBridgeTime"}, {10,8}, {20,8}},
 
 -- 6: NUGGET BRIDGE
 
