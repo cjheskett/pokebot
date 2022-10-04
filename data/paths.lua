@@ -192,9 +192,9 @@ local paths = {
 	-- Mart
 	{91, {3,7}, {3,5}, {2,5}, {s="vermilionMart"}, {3,5}, {3,8}},
 	-- To Surge
-	{5, {23,14}, {15,14}, {15,17}, {s="potion",hp=20,yolo=5,forced="potion",chain=true}, {s="potion",hp=5,chain=true}, {s="teach",move="cut",poke="oddish",alt="paras",chain=true}, {s="teach",move="dig",poke="paras",alt="squirtle",chain=true}, {s="teach",move="bubblebeam",replace="poison_sting",chain=true}, {s="skill",move="cut",done=0x0D4D}, {15,20}, {12,20}, {12,19}},
+	{5, {23,14}, {15,14}, {15,17}, {s="potion",hp=20,yolo=5,forced="potion",chain=true}, {s="potion",hp=5,chain=true}, {s="teach",move="cut",poke="oddish",alt="paras",chain=true}, {s="teach",move="dig",poke="paras",alt="squirtle",chain=true}, {s="teach",move="bubblebeam",replace="poison_sting",chain=true}, {s="skill",move="cut",done=0x0D4D}, {15,19}, {s="nidoranManip"}, {15,20}, {s="pressA", dir="Left"}, {14,20}, {12,20}, {s="pressA", dir="Up"}, {12,19}},
 	-- Trashcans
-	{92, {4,17}, {s="a",a="Surge's Gym"}, {4,16}, {2,16}, {2,11}, {s="trashcans"}, {4,6}, {4,3}, {5,3}, {5,2}, {s="interact",dir="Up"}, {s="fightSurge"}, {s="split"}, {4,2}, {4,13}, {5,13}, {5,18}},
+	{92, {4,17}, {s="a",a="Surge's Gym"}, {5,17}, {5,12}, {s="interact", dir="Up"}, {4,12}, {4,11}, {s="interact", dir="Left"}, {s="trashcans"}, {4,6}, {4,3}, {5,3}, {5,2}, {s="interact",dir="Up"}, {s="fightSurge"}, {s="split"}, {4,2}, {4,13}, {5,13}, {5,18}},
 
 -- 8: SURGE
 

@@ -9,7 +9,7 @@ local PAINT_ON		= true -- Displays contextual information while the bot runs
 -- Start code (hard hats on)
 
 local START_WAIT = 99
-local VERSION = "1.7"
+local VERSION = "1.8"
 
 local battle = require "action.battle"
 local textbox = require "action.textbox"
@@ -176,7 +176,7 @@ while true do
 	end
 	if (not input.update()) then
 		if (not utils.ingame() or continued) then
-			if (currentMap == 0 or currentMap == 255 or currentMap == 1 or currentMap == 60) then
+			if (currentMap == 0 or currentMap == 255 or currentMap == 1 or currentMap == 60 or currentMap == 5) then
 				if (running) then
 					if (not hasAlreadyStartedPlaying) then
 						client.reboot_core()
