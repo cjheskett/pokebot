@@ -1327,6 +1327,11 @@ strategyFunctions = {
 		return true
 	end,
 
+	grabMoonItem = function()
+		input.press("A", 5)
+		return true
+	end,
+
 	evolveNidorino = function()
 		if (pokemon.inParty("nidorino")) then
 			bridge.caught("nidorino")

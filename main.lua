@@ -90,7 +90,7 @@ local function continue()
 	gui.text(0,42,CFC)
 	local current = pb_memory.value("menu", "current")
 	if (strategies.holdA) then
-		if (CFC > 5 and CFC < 50) then
+		if (CFC > 5 and CFC < 200) then
 			holdButton("A")
 		end
 	end
@@ -182,7 +182,7 @@ while true do
 	end
 	if (not input.update()) then
 		if (not utils.ingame() or continued) then
-			if (currentMap == 0 or currentMap == 255 or currentMap == 1 or currentMap == 60 or currentMap == 5) then
+			if (currentMap == 0 or currentMap == 255 or currentMap == 1 or currentMap == 59 or currentMap == 5) then
 				if (running) then
 					if (not hasAlreadyStartedPlaying) then
 						client.reboot_core()
